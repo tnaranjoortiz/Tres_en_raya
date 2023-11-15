@@ -36,11 +36,11 @@ def dibujaTablero(tablero):
     print('\n')
     
 
-import tres_en_raya as TER   #tres_en_raya es un módulo
+import tres_en_raya as TER 
 
-#%% EJERCICIO 1
+#%% 
 
-# Implemente en el módulo una función denominada compruebaTablero que reciba 
+# Implementamos en el módulo una función denominada compruebaTablero que reciba 
 # como argumento de entrada el tablero y compruebe si la partida ha terminado, 
 # bien con la victoria de alguno de los jugadores, o bien con empate.
 
@@ -72,10 +72,10 @@ def compruebaTablero(tablero):
     # Si no se cumple ninguna de las condiciones anteriores:
     return "Empate"
 
-#%% EJERCICIO 2
+#%% 
 
-# Implemente en el módulo una función denominada mueveJugador que registre un 
-# movimiento del usuario. La función debe ser robusta a posibles errores 
+# Implementamos en el módulo una función denominada mueveJugador, que registra un 
+# movimiento del usuario. La función es robusta a posibles errores 
 # (casilla ocupada, casilla inexistente, etc).
 
 def mueveJugador(tablero, jugador, fila, columna):
@@ -111,9 +111,9 @@ def mueveJugador(tablero, jugador, fila, columna):
     # Devolvemos cómo ha quedado el tablero tras el movimiento
     return TER.dibujaTablero(tablero)
 
-#%% EJERCICIO 3
+#%% 
 
-# Implemente en el módulo una función denominada mueveIA que realice un 
+# Implementamos en el módulo una función denominada mueveIA que realiza un 
 # movimiento por parte de la IA, que se realizará escogiendo de forma aleatoria 
 # una de las casillas vacías.
 
@@ -138,9 +138,9 @@ def mueveIA(tablero, IA):   # IA hace referencia a la figura (X, O) con la que j
     else:
         print("\nNo hay ninguna casilla vacía, así que no se pueden hacer más movimientos.")
 
-#%% EJERCICIO 4
+#%% 
 
-# Implemente en el módulo una función denominada nuevoJuego, que gestione una 
+# Implementamos en el módulo una función denominada nuevoJuego, que gestiona una 
 # partida completa del usuario contra la IA. La IA empieza siempre moviendo.
 
 def nuevoJuego(jugador):   # El usuario elige con qué figura quiere jugar
@@ -155,7 +155,7 @@ def nuevoJuego(jugador):   # El usuario elige con qué figura quiere jugar
     elif jugador == "O":
         IA = "X"
         print("\nComienza la partida.")
-    else:   # ROBUSTEZ, por si no se introduce ninguna de las dos figuras correctas
+    else:  
         print("Debes introducir 'O' o 'X' para poder jugar.")
       
         
@@ -223,9 +223,9 @@ def nuevoJuego(jugador):   # El usuario elige con qué figura quiere jugar
             print(situacion)
             break
         
-#%% EJERCICIO 5
+#%% 
 
-# Implemente en el módulo una función denominada nuevoTorneo, que gestione un 
+# Implementamos en el módulo una función denominada nuevoTorneo, que gestiona un 
 # torneo compuesto por 3 partidas consecutivas contra la IA. La función determinará 
 # el ganador del torneo y lo indicará. En caso de empate, lanzará una partida 
 # adicional de desempate.
@@ -277,9 +277,9 @@ def nuevoTorneo(jugador):
         else:
             print("\nLa IA es la vencedera del torneo. ¡Suerte para la próxima!")
             
-#%% EJERCICIO 6
+#%% 
 
-# Cree una nueva función de movimiento de la IA denominada mueveIA2, en la que 
+# Creamos una nueva función de movimiento de la IA denominada mueveIA2, en la que 
 # se reciba, además del tablero, un segundo argumento dificultad, que podrá 
 # tomar los valores ‘fácil’ o ‘difícil’, que modificarán el comportamiento de la IA
 
@@ -360,7 +360,10 @@ def mueveIA2(tablero, IA, dificultad):
     return TER.dibujaTablero(tablero)
 
 
-#%%   EXTRA
+#%%   
+
+# Creamos una segunda modalidad de la función nuevoJuego, donde se puede elegir 
+# el modo difícil
 
 def nuevoJuego2(jugador, dificultad):   
     tablero = [[' ',' ',' '],    
@@ -442,7 +445,9 @@ def nuevoJuego2(jugador, dificultad):
             print(situacion)
             break
 
-#%%  EXTRA
+#%%  
+
+# Por último, tenemos una función para jugar un Torneo, con la posibilidad de elegir dificultad Difícil
 
 def nuevoTorneo2(jugador, dificultad):
     
